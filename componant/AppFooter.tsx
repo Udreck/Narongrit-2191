@@ -13,7 +13,7 @@ const AppFooter = ():React.JSX.Element => {
       {
         isLogin == true?
         <Text>Welcome Marry</Text>
-        :<Text>Get Out Marry</Text>
+        :<Text>Get Out Marry</Text> 
       }
     </View>
   )

@@ -9,7 +9,7 @@ type AppHeaderProps={
 const AppHeader = ({title, year}:AppHeaderProps):React.JSX.Element => {
   return (
     <View>
-      <Text>{title} {year}</Text>
+      <Text>{title} {year}</Text> 
     </View>
   )
 }
