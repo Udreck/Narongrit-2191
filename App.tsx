@@ -19,7 +19,7 @@ export default function App():React.JSX.Element {
           <Text key={data.id}>
             No.{index+1} ID: {data.id} Name: {data.name}
           </Text>
-        )
+        ) 
       })}
       {/* <Button title="Click Me" onPress={()=>{Alert.alert('Hi','React Native is Fuck!!')}}/> */}
       <Button title="Click Me" onPress={onClickMe} color="red"/>
