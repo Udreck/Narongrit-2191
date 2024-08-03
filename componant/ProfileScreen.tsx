@@ -1,30 +1,33 @@
-import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native'
-import React, { useState } from 'react'
-import styles from '../styles/styles';
+import{ StyleSheet, Text, View, Button, Alert } from "react-native";
+import React from "react";
 
-const ProfileScreen = ():React.JSX.Element => {
-    const [profileImage,setImage] = useState(require("../assets/lo.jpg"));
-    const [name,setName] = useState("Narongrit Prommadaj");
-    const handleChangeName = ()=>{
-        setName(name == "Narongrit Prommadaj" ? "Avada Kedubbla" : "Narongrit Prommadaj");
-    }
-    const handleChangeImahe = ()=>{
-        //setImage(require("../assets/ma.jpg"));
-        setImage(profileImage == require("../assets/lo.jpg") ? require("../assets/ma.jpg"): require("../assets/lo.jpg"));
-    }
+interface ContentProps {
+  fullname: string;
+};
+
+const Content : React.FC<ContentProps> = ({fullname}) => {
+  const handlePress = () => {
+    Alert.alert("Hello", "Rujee Nakkardpanou");
+  };
+
   return (
-    <View style={styles.container}>
-        <View style={styles.profileContainer}>
-            <Image source={profileImage} style={styles.profileImage}/>
-            <View>
-                <Text style={styles.profileName}>{name}</Text>
-                <Button title="Click Me" onPress={handleChangeName}/>
-                <Text></Text>
-                <Button title="Click Me" onPress={handleChangeImahe}/>
-            </View>
-        </View>
-    </View>
-  )
-}
+      <View style={styles.content}>
+        <Text style = {styles.text}>{fullname}</Text>
+        <Button title="Click Me" onPress={handlePress} color="blue" />
+      </View>
+  );
+};
 
-export default ProfileScreen
+export default Content
+
+const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 18,
+    marginBottom: 20,
+  },
+});
