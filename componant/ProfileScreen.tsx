@@ -1,22 +1,7 @@
-import{ StyleSheet, Text, View, Button, Alert } from "react-native";
-import React from "react";
-import { stylePractice } from "../styles/styles";
+import { Text, View, Image, Button } from "react-native";
+import React, { useState } from "react";
+import { styles } from "../styles/styles";
+import styles from "../styles/styles";
 
-interface ContentProps {
-  fullname: string;
-};
-
-const ProfileScreen : React.FC<ContentProps> = ({fullname}) => {
-  const handlePress = () => {
-    Alert.alert("Hello", "Narongrit Prommadaj");
-  };
-
-  return (
-      <View style={stylePractice.content}>
-        <Text style = {stylePractice.text2}>{fullname}</Text>
-        <Button title="Click Me" onPress={handlePress} color="blue" />
-      </View>
-  );
-};
-
-export default ProfileScreen
+const ProfileScreen = (): React.JSX.Element => {
+  const profileImage = require("../assets/lo.jpg");

@@ -1,35 +1,19 @@
 import { StyleSheet, Text, View } from 'react-native'
+import { stylesPractice } from '../styles/styles';
 import React from 'react'
-import AppHeader from './AppHeader';
-interface AppFooterProps {
-  message: string;
-};
 
-const AppFooter = ({ message }: AppFooterProps): React.JSX.Element => {
+
+type footerMsg ={
+  footerMessage:string;
+}
+const AppFooter = ({footerMessage}:footerMsg):React.JSX.Element => {
+  const hello = "Hello TNI Footer" 
+  const hello2 = <Text>Hello JSX</Text>
+  const isLogin = true;
 return (
-  <View style={styles.appFooter}>
-     <Text style={styles.text}>{message}</Text>
+  <View style={stylesPractice.footer}>
+        <Text style={stylesPractice.text}>{footerMessage}</Text>
     </View>
   )
 }
-
 export default AppFooter
-
-const styles = StyleSheet.create({
-  appFooter: {
-    backgroundColor: '#f8f8f8',
-    padding: 20,
-    fontSize: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  text: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-  }
-})
