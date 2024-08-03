@@ -1,12 +1,16 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text } from 'react-native';
+import { stylesPractice} from '../styles/styles';
 
-const AppFooter = () => {
-  return (
-    <View>
-      <Text>AppFooter</Text>
-    </View>
-  )
+interface AppFooterProps {
+  footerText: string;
 }
 
-export default AppFooter
+const AppFooter: React.FC<AppFooterProps> = ({ footerText }) => {
+  return (
+    <View style={stylesPractice.footer}>
+      <Text style={stylesPractice.footerText}>{footerText}</Text>
+    </View>
+  );
+};
+export default AppFooter;

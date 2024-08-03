@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Content from './componant/ProfileScreen'
+import UseEffectExamp1 from './componant/UseEffectExamp1'
 
 const App = ():React.JSX.Element => {
   return (
     <View>
-      
+      <UseEffectExamp1/>
     </View>
   )
 }

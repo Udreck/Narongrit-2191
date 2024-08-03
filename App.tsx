@@ -1,24 +1,25 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button, Alert } from "react-native";
-//import AppFooter from "./components/AppFooter";
-import AppHeader from "./componant/AppHeader";
-import AppFooter from "./componant/AppFooter";
-import Content from "./componant/ProfileScreen";
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import AppHeader from "./ExcerciseComponant/AppHeader";
+import AppFooter from "./ExcerciseComponant/AppFooter";
+import Content from "./ExcerciseComponant/Content";
+const App: React.FC = () => {
 
-export default function App(): React.JSX.Element {
-  const title = "Message from App.tsx";
+  const subtitle = "Message from App.tsx";
+  const title = "Input your fullname";
   return (
     <View style={styles.container}>
-      <AppHeader title={title} />
-      <Content fullname={title} />
-      <AppFooter message="Thai-Nichi Institute of Technology" />
+      <AppHeader title={title} subtitle={subtitle} />
+      <Content message={subtitle} title={title} />
+      <AppFooter footerText="Thai-Nichi Institute of Technology" />
     </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "space-between",
-  },
-});
+    );
+  };
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "space-between",
+    },
+  });
+  
+  export default App;
