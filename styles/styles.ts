@@ -59,6 +59,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     width: '80%',
     borderRadius: 8
+  },
+  container1:{
+    justifyContent:'center',
+    paddingTop:50
+  },
+  item:{
+    backgroundColor:'#f9c2ff',
+    padding:20,
+    marginVertical:8,
+    marginHorizontal:16
+  },
+  name:{
+    fontSize:20,
+    fontWeight:'bold'
+  },
+  email:{
+    fontSize:16
   }
 });
 
