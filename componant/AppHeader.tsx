@@ -1,20 +1,24 @@
-import {StyleSheet, View, Text } from 'react-native'
-import { stylesPractice } from '../styles/styles';
-import React from 'react'
+import React from "react";
+import { View, Text } from "react-native";
+import { stylesPractice } from "../styles/styles";
 
-
-type headerMsg ={
-  fullname:string;
-  message:string;
+interface AppHeaderProps {
+  fullname: string;
+  message: string;
 }
-const AppHeader = ({fullname,message}:headerMsg):React.JSX.Element => {
+
+const AppHeader = ({
+  fullname,
+  message,
+}: AppHeaderProps): React.JSX.Element => {
   return (
     <View style={stylesPractice.header}>
-      <Text style={stylesPractice.fullname}>
+      <Text style={stylesPractice.headerText}>
         Input your fullname: {fullname}
       </Text>
-      <Text style={stylesPractice.message}>{message}</Text>
+      <Text style={stylesPractice.subtitleText}>{message}</Text>
     </View>
-  )
-}
-export default AppHeader
+  );
+};
+
+export default AppHeader;
