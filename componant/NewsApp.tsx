@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
-interface User{
+interface News{
     title:string;
     description:string;
     publishedAt:string;
@@ -10,14 +10,17 @@ interface User{
 
 const NewsApp = (): React.JSX.Element => {
     const[news,setNews] = useState([]);
-    const[loading,setLoading] =useState(true);
+    const[loading,setLoading] =useState<boolean>(true);
     //const[error,setError] =useState(false);
 
+    const API_KEY = "d679ce9793be45c0b7134f3641102317";
+    const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+
     useEffect(()=>{
-       fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=d679ce9793be45c0b7134f3641102317')
+       fetch(URL)
        .then(response=>response.json())
        .then(data=>{
-            setNews(news);
+            setNews(data.articles);
             setLoading(false);
             //setError(true);
         })
@@ -26,7 +29,7 @@ const NewsApp = (): React.JSX.Element => {
             setLoading(false);
         });*/
     },[]);
-    const _renderItem = ({item}:{item:User})=>(
+    const _renderItem = ({item}:{item:News})=>(
         <TouchableOpacity style={styles.card}>
             <Text style={styles.headline}>{item.title}</Text>
             <Text style={styles.date}>{new Date(item.publishedAt).toLocaleDateString()}</Text>
@@ -34,7 +37,7 @@ const NewsApp = (): React.JSX.Element => {
         </TouchableOpacity>
       )
   return (
-    <View>
+    <View style={styles.container}>
       {loading?(
         <ActivityIndicator size="large" color="red"/>
       ):(
@@ -54,7 +57,7 @@ export default NewsApp
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#f0f0f0',
+        backgroundColor:'#ffa54a',
         padding:16
     },
     loadingContainer:{
@@ -70,9 +73,10 @@ const styles = StyleSheet.create({
         color:'red'
     },
     card:{
-        backgroundColor:'#fff',
+        backgroundColor:'#ff6a4a',
         padding:16,
         marginVertical:8,
+        margin:10,
         borderRadius:10,
         shadowColor:'#000',
         shadowOffset:{width:0, height:2},

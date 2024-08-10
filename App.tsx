@@ -11,8 +11,8 @@ const App = ():React.JSX.Element => {
     <View>
       {/*<ProfileScreen/>*/}
       {/*<FlashListExample/>*/}
-      {<FlashListcallbackend/>}
-      {/*<NewsApp/>*/}
+      {/*<FlashListcallbackend/>*/}
+      {<NewsApp/>}
     </View>
   )
 }
