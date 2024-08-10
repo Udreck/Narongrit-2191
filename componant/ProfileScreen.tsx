@@ -4,14 +4,14 @@ import { stylesProfile } from '../styles/styles' // เรียกใช้ส�
 import Login from "./Login";
 
 const ProfileScreen = (): React.JSX.Element => {
-    const initialProfileImage = require("../assets/ma.jpg");
+    const initialProfileImage = require("../assets/lo.jpg");
     const newProfileImage = require("../assets/ma.jpg");
 
-    const [name, setName] = useState("Thanapat Larpwaree");
+    const [name, setName] = useState("Narongrit Prommadaj");
     const [profileImage, setProfileImage] = useState(initialProfileImage);
 
     const handleChangeName = () => {
-        setName(name == "Thanapat Larpwaree" ? "THANK" : "Thanapat Larpwaree");
+        setName(name == "Narongrit Prommadaj" ? "Malo" : "Narongrit Prommadaj");
     };
 
     const handleChangeImage = () => {
