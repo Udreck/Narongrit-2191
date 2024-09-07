@@ -37,7 +37,7 @@ import {
   
     const fetchWeatherData = async () => {
       const API_KEY = 'd78aaab2d84844433d115114fb3bb62e';
-      const URL = `https://api.openweathermap.org/data/2.5/weather?q=Bangkok&appid=${API_KEY}&units=metric&lang=th`;;
+      const URL = `https://api.openweathermap.org/data/2.5/weather?q=Bangkok&appid=${API_KEY}&units=metric&lang=th`;
       try {
         const response = await axios.get(URL);
         setState({
@@ -110,7 +110,7 @@ import {
       justifyContent: "center",
       alignItems: "center",
       padding: 16,
-      backgroundColor: "#afc0f7",
+      backgroundColor: "#f5f5f5",
       marginTop: 50,
     },
     centeredContainer: {
