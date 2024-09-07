@@ -6,6 +6,8 @@ import FlashListcallbackend from './componant/FlashListcallbackend'
 import NewsApp from './componant/NewsApp'
 import WeatherLondon from './componant/WeatherLondon'
 import WeatherBangkok from './componant/WeatherBangkok'
+import ModelExample from './componant/ModelExample'
+import WeatherApp from './componant/WeatherApp'
 
 
 const App = ():React.JSX.Element => {
@@ -16,7 +18,9 @@ const App = ():React.JSX.Element => {
       {/*<FlashListcallbackend/>*/}
       {/* <NewsApp/> */}
       {/* <WeatherLondon/> */}
-      <WeatherBangkok/>
+      {/* <WeatherBangkok/> */}
+      {/* <ModelExample/> */}
+      <WeatherApp/>
     </View>
   )
 }
