@@ -1,6 +1,6 @@
 import { StyleSheet,View, Text, Button } from "react-native";
 import React from "react";
-
+import Icon from "@react-native-vector-icons/material-icons";
 const HomeScreen = ({ navigation,route }: any): React.JSX.Element => {
   const gotoAbout = () => {
     navigation.navigate("About", {
